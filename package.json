@@ -1,0 +1,14 @@
+{
+  "name": "hl7-generate-parse",
+  "version": "1.0.0",
+  "description": "`hl7-generate-parse` is a Node.js library that provides functions to parse and generate HL7 messages to and from JSON. This library currently supports a wide range of HL7 segments for parsing and generating.",
+  "main": "index.js",
+  "dependencies": {
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
