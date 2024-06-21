@@ -1,0 +1,118 @@
+{
+  "DEL_O46": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "DONOR"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "DON"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "DONOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PID"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PD1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "DONOR_OBSERVATIONS"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "AL1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "DONOR_REGISTRATION"
+      }
+    ]
+  },
+  "DONOR_OBSERVATIONS": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      }
+    ]
+  },
+  "DONOR_REGISTRATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PV1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  }
+}

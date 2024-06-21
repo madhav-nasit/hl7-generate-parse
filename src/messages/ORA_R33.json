@@ -1,0 +1,50 @@
+{
+  "ORA_R33": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSA"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ERR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "ORDER"
+      }
+    ]
+  },
+  "ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ORC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      }
+    ]
+  }
+}

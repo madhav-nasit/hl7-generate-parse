@@ -1,0 +1,65 @@
+{
+  "MFN_M04": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MFI"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "MF_CDM"
+      }
+    ]
+  },
+  "MF_CDM": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MFE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "CDM"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRC"
+      }
+    ]
+  }
+}

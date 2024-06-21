@@ -1,0 +1,342 @@
+{
+  "PPP_PCB": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PID"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "PROVIDER"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT_VISIT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "PATHWAY"
+      }
+    ]
+  },
+  "PROVIDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PRD"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "CTD"
+      }
+    ]
+  },
+  "PATIENT_VISIT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PV1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PV2"
+      }
+    ]
+  },
+  "PATHWAY": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PTH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PATHWAY_PARTICIPATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PROBLEM"
+      }
+    ]
+  },
+  "PATHWAY_PARTICIPATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ROL"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      }
+    ]
+  },
+  "PROBLEM": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PRB"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PROBLEM_PARTICIPATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PROBLEM_OBSERVATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "GOAL"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "ORDER"
+      }
+    ]
+  },
+  "PROBLEM_PARTICIPATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ROL"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      }
+    ]
+  },
+  "PROBLEM_OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "GOAL": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "GOL"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "GOAL_PARTICIPATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "GOAL_OBSERVATION"
+      }
+    ]
+  },
+  "GOAL_PARTICIPATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ROL"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      }
+    ]
+  },
+  "GOAL_OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ORC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "ORDER_DETAIL"
+      }
+    ]
+  },
+  "ORDER_DETAIL": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "group": "CHOICE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "ORDER_OBSERVATION"
+      }
+    ]
+  },
+  "CHOICE": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBR"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "anyHL7Segment"
+      }
+    ]
+  },
+  "ORDER_OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "VAR"
+      }
+    ]
+  }
+}

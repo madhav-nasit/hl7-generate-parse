@@ -1,0 +1,117 @@
+{
+  "EHC_E10": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSA"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ERR"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "INVOICE_PROCESSING_RESULTS_INFO"
+      }
+    ]
+  },
+  "INVOICE_PROCESSING_RESULTS_INFO": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "IPR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PYE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "IN1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "IN2"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "IVC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "PRODUCT_SERVICE_SECTION"
+      }
+    ]
+  },
+  "PRODUCT_SERVICE_SECTION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PSS"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "PRODUCT_SERVICE_GROUP"
+      }
+    ]
+  },
+  "PRODUCT_SERVICE_GROUP": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PSG"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "PRODUCT_SERVICE_LINE_INFO"
+      }
+    ]
+  },
+  "PRODUCT_SERVICE_LINE_INFO": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PSL"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ADJ"
+      }
+    ]
+  }
+}

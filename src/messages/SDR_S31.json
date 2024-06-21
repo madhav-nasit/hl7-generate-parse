@@ -1,0 +1,40 @@
+{
+  "SDR_S31": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "group": "ANTI-MICROBIAL_DEVICE_DATA"
+      }
+    ]
+  },
+  "ANTI-MICROBIAL_DEVICE_DATA": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "SDD"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SCD"
+      }
+    ]
+  }
+}

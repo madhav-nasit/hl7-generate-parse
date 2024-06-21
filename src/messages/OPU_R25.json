@@ -1,0 +1,305 @@
+{
+  "OPU_R25": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PV1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PV2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PATIENT_VISIT_OBSERVATION"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "ACCESSION_DETAIL"
+      }
+    ]
+  },
+  "PATIENT_VISIT_OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      }
+    ]
+  },
+  "ACCESSION_DETAIL": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "segment": "NK1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "SPECIMEN"
+      }
+    ]
+  },
+  "PATIENT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PID"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PD1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "OH1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "OH2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "OH3"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "OH4"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PATIENT_OBSERVATION"
+      }
+    ]
+  },
+  "PATIENT_OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "SPECIMEN": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "SPM"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "SPECIMEN_OBSERVATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "CONTAINER"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "ORDER"
+      }
+    ]
+  },
+  "SPECIMEN_OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "CONTAINER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "SAC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "INV"
+      }
+    ]
+  },
+  "ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "COMMON_ORDER"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "TIMING_QTY"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "RESULT"
+      }
+    ]
+  },
+  "COMMON_ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ORC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      }
+    ]
+  },
+  "TIMING_QTY": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "TQ1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "TQ2"
+      }
+    ]
+  },
+  "RESULT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  }
+}

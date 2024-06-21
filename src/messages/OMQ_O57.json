@@ -1,0 +1,374 @@
+{
+  "OMQ_O57": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "ORDER"
+      }
+    ]
+  },
+  "PATIENT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PID"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PD1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NK1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT_VISIT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "INSURANCE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "GT1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "AL1"
+      }
+    ]
+  },
+  "PATIENT_VISIT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PV1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PV2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      }
+    ]
+  },
+  "INSURANCE": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "IN1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "IN2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "IN3"
+      }
+    ]
+  },
+  "ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ORC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "TXA"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "CTD"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "DG1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "OBSERVATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PRIOR_RESULT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "FT1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "CTI"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "BLG"
+      }
+    ]
+  },
+  "OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "PRIOR_RESULT": {
+    "elements": [
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT_PRIOR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT_VISIT_PRIOR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "AL1"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "ORDER_PRIOR"
+      }
+    ]
+  },
+  "PATIENT_PRIOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PID"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PD1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      }
+    ]
+  },
+  "PATIENT_VISIT_PRIOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PV1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PV2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      }
+    ]
+  },
+  "ORDER_PRIOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ORC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "TIMING_PRIOR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "OBSERVATION_PARTICIPATION_PRIOR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "CTD"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "OBSERVATION_PRIOR"
+      }
+    ]
+  },
+  "TIMING_PRIOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "TQ1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "TQ2"
+      }
+    ]
+  },
+  "OBSERVATION_PARTICIPATION_PRIOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "DEV"
+      }
+    ]
+  },
+  "OBSERVATION_PRIOR": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  }
+}

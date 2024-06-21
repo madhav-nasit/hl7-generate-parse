@@ -1,0 +1,36 @@
+{
+  "ESU_U01": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "EQU"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ISD"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "ROL"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "QBP_Q11": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "QPD"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "QBP"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "RCP"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "DSC"
+      }
+    ]
+  },
+  "QBP": {
+    "elements": [
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "anyHL7Segment"
+      }
+    ]
+  }
+}

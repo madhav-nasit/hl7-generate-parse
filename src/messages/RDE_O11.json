@@ -1,0 +1,331 @@
+{
+  "RDE_O11": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "ORDER"
+      }
+    ]
+  },
+  "PATIENT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PID"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PD1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "PATIENT_VISIT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "INSURANCE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "GT1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "AL1"
+      }
+    ]
+  },
+  "PATIENT_VISIT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PV1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "PV2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ARV"
+      }
+    ]
+  },
+  "INSURANCE": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "IN1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "IN2"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "IN3"
+      }
+    ]
+  },
+  "ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "ORC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "TIMING"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "ORDER_DETAIL"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "RXE"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "TIMING_ENCODED"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "PHARMACY_TREATMENT_INFUSION_ORDER"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "segment": "RXR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "RXC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "CDO"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "OBSERVATION"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "FT1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "BLG"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "CTI"
+      }
+    ]
+  },
+  "TIMING": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "TQ1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "TQ2"
+      }
+    ]
+  },
+  "ORDER_DETAIL": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "RXO"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "segment": "RXR"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "group": "COMPONENT"
+      }
+    ]
+  },
+  "COMPONENT": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "RXC"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  },
+  "TIMING_ENCODED": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "TQ1"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "TQ2"
+      }
+    ]
+  },
+  "PHARMACY_TREATMENT_INFUSION_ORDER": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "RXV"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "TIMING_ENCODED"
+      }
+    ]
+  },
+  "OBSERVATION": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "OBX"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "PRT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "NTE"
+      }
+    ]
+  }
+}

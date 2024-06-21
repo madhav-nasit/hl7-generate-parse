@@ -1,0 +1,50 @@
+{
+  "MFN_M07": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MFI"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "MF_CLIN_STUDY_SCHED"
+      }
+    ]
+  },
+  "MF_CLIN_STUDY_SCHED": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MFE"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "CM0"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "CM2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "RSP_E22": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSH"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "SFT"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "UAC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "MSA"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "segment": "ERR"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "group": "QUERY_ACK"
+      }
+    ]
+  },
+  "QUERY_ACK": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "QAK"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "QPD"
+      },
+      {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "group": "AUTHORIZATION_INFO"
+      }
+    ]
+  },
+  "AUTHORIZATION_INFO": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "IVC"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PSG"
+      },
+      {
+        "minOccurs": "1",
+        "maxOccurs": "unbounded",
+        "group": "PSL_ITEM_INFO"
+      }
+    ]
+  },
+  "PSL_ITEM_INFO": {
+    "elements": [
+      {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "segment": "PSL"
+      }
+    ]
+  }
+}
