@@ -69,7 +69,7 @@ Segments not specifically listed above are handled generically by the library.
 ```javascript
 const { parseHL7Message } = require('hl7-generate-parse');
 
-const hl7ADTMessage = `MSH|^~\&|ADT1|GOOD HEALTH HOSPITAL|GHH LAB, INC.|GOOD HEALTH HOSPITAL|198808181126|SECURITY|ADT^A01^ADT_A01|MSG00001|P|2.8||
+const hl7ADTMessage = `MSH|^~\\&|ADT1|GOOD HEALTH HOSPITAL|GHH LAB, INC.|GOOD HEALTH HOSPITAL|198808181126|SECURITY|ADT^A01^ADT_A01|MSG00001|P|2.8||
 EVN|A01|200708181123||
 PID|1||PATID1234^5^M11^ADT1^MR^GOOD HEALTH HOSPITAL~123456789^^^USSSA^SS||EVERYMAN^ADAM^A^III||19610615|M||C|2222 HOME STREET^^GREENSBORO^NC^27401-1020|GL|(555) 555-2004|(555)555-2004||S||PATID12345001^2^M10^ADT1^AN^A|444333333|987654^NC|
 NK1|1|NUCLEAR^NELDA^W|SPO^SPOUSE||||NK^NEXT OF KIN
@@ -86,7 +86,7 @@ try {
 ### Generating HL7 from JSON
 
 ```javascript
-const { generateHL7Message } = require('hl7-generate-parse');
+const { hl7MessageGenerator } = require('hl7-generate-parse');
 
 const hl7JsonData = {
   MSH: [
@@ -109,9 +109,24 @@ const hl7JsonData = {
   // Include other segments like PID, PV1, etc.
 };
 
+const hl7Generator = new hl7MessageGenerator();
+
 try {
-  const hl7Message = generateHL7Message(hl7JsonData);
-  console.log(`Generated Message: \n${hl7Message}`);
+  // Option 1: Generate HL7 message with addSegment
+  console.log('Option 1: Generate HL7 message with addSegment');
+  hl7Generator.addSegment('MSH', hl7JsonData['MSH']);
+  hl7Generator.addSegment('EVN', hl7JsonData['EVN']);
+  // Include other segments like PID, PV1, etc.
+
+  const hl7Message1 = hl7Generator.generateHl7();
+  console.log(`Generated Message (Option 1): \n${hl7Message1}`);
+
+  console.log('\n');
+
+  // Option 2: Generate HL7 message with complete Json
+  console.log('Option 2: Generate HL7 message with complete Json');
+  const hl7Message2 = hl7Generator.generateHl7(hl7JsonData);
+  console.log(`Generated Message (Option 2): \n${hl7Message2}`);
 } catch (error) {
   console.error(`Generate Error:\n${error.message}`);
 }
