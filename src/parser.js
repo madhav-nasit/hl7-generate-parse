@@ -1064,7 +1064,7 @@ const parseHL7Message = (hl7Message) => {
   const segments = hl7Message.trim().split('\n');
   const mshSegment = segments.find((segment) => segment.startsWith('MSH'));
   const separator = mshSegment[3] || `|`;
-  const encChars = mshSegment.split(separator)[1] || `^~\&`;
+  const encChars = mshSegment.split(separator)[1] || `^~\\&`;
   const parsedMessage = {};
 
   segments.forEach((segment) => {

@@ -11,7 +11,7 @@ const formatField = (field, encChars, joinBy) => {
     return field.map((item) => formatField(item, encChars, encChars[0]).replace(/(\^+)+$/, '')).join(encChars[1]);
   } else if (typeof field === 'object') {
     return Object.values(field)
-      .map((item) => formatField(item, encChars, encChars[2]).replace(/(\&+)+$/, ''))
+      .map((item) => formatField(item, encChars, encChars[3]).replace(/(\&+)+$/, ''))
       .join(joinBy ? joinBy : encChars[0]);
   }
   return String(field);

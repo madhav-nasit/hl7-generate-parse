@@ -1,7 +1,7 @@
 const { parseHL7Message } = require('./src/parser');
-const { generateHL7Message } = require('./src/generator');
+const hl7MessageGenerator = require('./src/generator');
 
 module.exports = {
   parseHL7Message,
-  generateHL7Message,
+  hl7MessageGenerator,
 };
