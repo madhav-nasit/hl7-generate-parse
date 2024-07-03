@@ -1,6 +1,6 @@
-const { parseHL7Message, generateHL7Message } = require('../index');
+const { parseHL7Message, hl7MessageGenerator } = require('../index');
 
-const hl7ORCMessage = `MSH|^~\&|PS360|SCL|PACS|PVMC|20190418225003||ORU^R01|12345|P|2.3
+const hl7ORCMessage = `MSH|^~\\&|PS360|SCL|PACS|PVMC|20190418225003||ORU^R01|12345|P|2.3
 PID|||54658945213||Last^First||20190425|M|||^^^^^U SA|||||||20190425|000000001
 PV1|1|E|PVED^ED02^ED02^EPVB^R||||1851634828^Last^F irst^E|1851634828^Last^First^E||1|||||||||37014421 4|||||||||||||||||||||||||20190418220755
 ORC|CN
@@ -17,9 +17,34 @@ const parsedMessage = parseHL7Message(hl7ORCMessage);
 console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
 
 console.log('\n');
+
+const hl7Generator = new hl7MessageGenerator();
+
 try {
-  const hl7Message = generateHL7Message(parsedMessage);
-  console.log(`Generated Message: \n${hl7Message}`);
+  // Option 1: Generate HL7 message with addSegment
+  console.log('Option 1: Generate HL7 message with addSegment');
+  hl7Generator.addSegment('MSH', parsedMessage['MSH']);
+  hl7Generator.addSegment('PID', parsedMessage['PID']);
+  hl7Generator.addSegment('PV1', parsedMessage['PV1']);
+  hl7Generator.addSegment('ORC', parsedMessage['ORC'][0]);
+  hl7Generator.addSegment('ORC', parsedMessage['ORC'][1]);
+  hl7Generator.addSegment('OBR', parsedMessage['OBR'][0]);
+  hl7Generator.addSegment('OBR', parsedMessage['OBR'][1]);
+  hl7Generator.addSegment('OBX', parsedMessage['OBX'][0]);
+  hl7Generator.addSegment('OBX', parsedMessage['OBX'][1]);
+  hl7Generator.addSegment('OBX', parsedMessage['OBX'][2]);
+  hl7Generator.addSegment('OBX', parsedMessage['OBX'][3]);
+  hl7Generator.addSegment('OBX', parsedMessage['OBX'][4]);
+
+  const hl7Message1 = hl7Generator.generateHl7();
+  console.log(`Generated Message (Option 1): \n${hl7Message1}`);
+
+  console.log('\n');
+
+  // Option 2: Generate HL7 message with complete Json
+  console.log('Option 2: Generate HL7 message with complete Json');
+  const hl7Message2 = hl7Generator.generateHl7(parsedMessage);
+  console.log(`Generated Message (Option 2): \n${hl7Message2}`);
 } catch (error) {
   console.error(`Generate Error:\n${error.message}`);
 }
