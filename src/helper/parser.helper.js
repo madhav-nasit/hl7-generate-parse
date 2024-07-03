@@ -10,12 +10,12 @@ const formatPersonData = (person, encChars, separator = encChars[0]) => {
     Prefix: components[5],
     Degree: components[6],
     SourceTable: components[7],
-    AssigningAuthority: components[8] ? formatHierarchicDesignator(components[8], encChars, encChars[2]) : null,
+    AssigningAuthority: components[8] ? formatHierarchicDesignator(components[8], encChars, encChars[3]) : null,
     NameTypeCode: components[9],
     IdentifierCheckDigit: components[10],
     CheckDigitScheme: components[11],
     IdentifierTypeCode: components[12],
-    AssigningFacility: components[13] ? formatHierarchicDesignator(components[13], encChars, encChars[2]) : null,
+    AssigningFacility: components[13] ? formatHierarchicDesignator(components[13], encChars, encChars[3]) : null,
     NameRepresentationCode: components[14],
     NameContext: components[15],
     NameValidityRange: components[16],
@@ -81,9 +81,9 @@ const formatCheckDigit = (visit, encChars, separator = encChars[0]) => {
     IdNumber: components[0],
     CheckDigit: components[1],
     CheckDigitScheme: components[2],
-    AssigningAuthority: components[3] ? formatHierarchicDesignator(components[3], encChars, encChars[2]) : null,
+    AssigningAuthority: components[3] ? formatHierarchicDesignator(components[3], encChars, encChars[3]) : null,
     IdentifierTypeCode: components[4],
-    AssigningFacility: components[5] ? formatHierarchicDesignator(components[5], encChars, encChars[2]) : null,
+    AssigningFacility: components[5] ? formatHierarchicDesignator(components[5], encChars, encChars[3]) : null,
     EffectiveDate: components[6],
     ExpirationDate: components[7],
     AssigningJurisdiction: components[8] ? formatCodedElementWithNoExceptions(components[8], encChars) : null,
@@ -139,7 +139,7 @@ const formatTelecommunication = (element, encChars, separator = encChars[0]) => 
  */
 const formatAddress = (address, encChars, separator = encChars[0]) => {
   const components = address.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     StreetAddress: {
       StreetOrMailingAddress: components[0].split(nestedSeparator)[0],
@@ -179,7 +179,7 @@ const formatHierarchicDesignator = (element, encChars, separator = encChars[0]) 
 
 const formatOrganizations = (organization, encChars, separator = encChars[0]) => {
   const components = organization.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     OrganizationName: components[0],
     OrganizationNameTypeCode: components[1],
@@ -196,7 +196,7 @@ const formatOrganizations = (organization, encChars, separator = encChars[0]) =>
 
 const formatPrice = (price, encChars, separator = encChars[0]) => {
   const components = price.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     Price: components[0],
     PriceType: components[1],
@@ -263,7 +263,7 @@ const formatEntityIdentifier = (element, encChars, separator = encChars[0]) => {
 
 const formatTimingQuantity = (element, encChars, separator = encChars[0]) => {
   const components = element.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
 
   return {
     Quantity: components[0] ? formatCompositeQuantity(components[0], encChars, nestedSeparator) : null,
@@ -287,7 +287,7 @@ const formatTimingQuantity = (element, encChars, separator = encChars[0]) => {
 };
 
 const formatOrderSequenceDefinition = (element, encChars) => {
-  const components = element.split(encChars[2]);
+  const components = element.split(encChars[3]);
   return {
     SequenceResultsFlag: components[0],
     PlacerOrderNumberEntityIdentifier: components[1],
@@ -337,7 +337,7 @@ const formatProcessingType = (segment, encChars, separator = encChars[0]) => {
  */
 const formatVersionIdentifier = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     VersionId: components[0],
     InternationalizationCode: components[1] ? formatCodedElement(components[1], encChars, nestedSeparator) : null,
@@ -410,7 +410,7 @@ const formatAuthorizationInformation = (auiSegment, encChars, separator = encCha
  */
 const formatCompositeQuantity = (quantity, encChars, separator = encChars[0]) => {
   const components = quantity.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     Quantity: components[0],
     Units: components[1] ? formatCodedElement(components[1], encChars, nestedSeparator) : null,
@@ -469,7 +469,7 @@ const parsePrimaryKeyValues = (values, encChars, separator = encChars[0]) => {
  */
 const formatDIN = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     Date: components[0],
     InstitutionName: components[1] ? formatCodedElement(components[1], encChars, nestedSeparator) : null,
@@ -503,7 +503,7 @@ const formatPLN = (segment, encChars, separator = encChars[0]) => {
  */
 const formatPIP = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     Privilege: components[0] ? formatCodedElement(components[0], encChars, nestedSeparator) : null,
     PrivilegeClass: components[1] ? formatCodedElement(components[1], encChars, nestedSeparator) : null,
@@ -520,7 +520,7 @@ const formatPIP = (segment, encChars, separator = encChars[0]) => {
  */
 const formatEIP = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     PlacerAssignedIdentifier: components[0] ? formatEntityIdentifier(components[0], encChars, nestedSeparator) : null,
     FillerAssignedIdentifier: components[1] ? formatEntityIdentifier(components[1], encChars, nestedSeparator) : null,
@@ -534,7 +534,7 @@ const formatEIP = (segment, encChars, separator = encChars[0]) => {
  */
 const formatSPS = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
 
   return {
     SpecimenSourceNameOrCode: components[0] ? formatCodedElement(components[0], encChars, nestedSeparator) : null,
@@ -554,7 +554,7 @@ const formatSPS = (segment, encChars, separator = encChars[0]) => {
  */
 const formatMOC = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
 
   return {
     MonetaryAmount: components[0],
@@ -569,7 +569,7 @@ const formatMOC = (segment, encChars, separator = encChars[0]) => {
  */
 const formatPRL = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
 
   return {
     ParentObservationIdentifier: components[0] ? formatCodedElement(components[0], encChars, nestedSeparator) : null,
@@ -585,7 +585,7 @@ const formatPRL = (segment, encChars, separator = encChars[0]) => {
  */
 const formatNDL = (segment, encChars, separator = encChars[0]) => {
   const components = segment.split(separator);
-  const nestedSeparator = encChars[2] ?? '&';
+  const nestedSeparator = encChars[3] ?? '&';
 
   return {
     Name: components[0] ? formatPersonData(components[0], encChars, nestedSeparator) : null,
