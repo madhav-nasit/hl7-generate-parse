@@ -1,6 +1,7 @@
 // XCN - Extended Composite ID Number and Name for Persons
 const formatPersonData = (person, encChars, separator = encChars[0]) => {
   const components = person.split(separator);
+  const nestedSeparator = encChars[3] ?? '&';
   return {
     IDNumber: components[0],
     FamilyName: components[1],
@@ -9,13 +10,13 @@ const formatPersonData = (person, encChars, separator = encChars[0]) => {
     Suffix: components[4],
     Prefix: components[5],
     Degree: components[6],
-    SourceTable: components[7],
-    AssigningAuthority: components[8] ? formatHierarchicDesignator(components[8], encChars, encChars[3]) : null,
+    SourceTable: components[7] ? formatCodedElement(components[7], encChars, nestedSeparator) : null,
+    AssigningAuthority: components[8] ? formatHierarchicDesignator(components[8], encChars, nestedSeparator) : null,
     NameTypeCode: components[9],
     IdentifierCheckDigit: components[10],
     CheckDigitScheme: components[11],
     IdentifierTypeCode: components[12],
-    AssigningFacility: components[13] ? formatHierarchicDesignator(components[13], encChars, encChars[3]) : null,
+    AssigningFacility: components[13] ? formatHierarchicDesignator(components[13], encChars, nestedSeparator) : null,
     NameRepresentationCode: components[14],
     NameContext: components[15],
     NameValidityRange: components[16],
