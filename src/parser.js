@@ -1034,15 +1034,33 @@ const parseOtherSegment = (segment, separator, encChars) => {
   const components = segment.split(separator);
   const segmentObj = {};
 
-  const handleComponent = (component, key) => {
-    if (component.includes(encChars[0])) {
-      const subComponents = component.split(encChars[0]);
-      segmentObj[key] = {};
-      subComponents.forEach((subComponent, subIndex) => {
-        segmentObj[key][`${key}.${subIndex + 1}`] = subComponent;
+  const handleSubComponent = (subComponent, parentObj, key) => {
+    if (subComponent.includes(encChars[3])) {
+      const subSubComponents = subComponent.split(encChars[3]);
+      parentObj[key] = {};
+      subSubComponents.forEach((subSubComponent, subSubIndex) => {
+        parentObj[key][`${key}.${subSubIndex + 1}`] = subSubComponent;
+      });
+    } else if (subComponent.includes('&')) {
+      const subSubComponents = subComponent.split('&');
+      parentObj[key] = {};
+      subSubComponents.forEach((subSubComponent, subSubIndex) => {
+        parentObj[key][`${key}.${subSubIndex + 1}`] = subSubComponent;
       });
     } else {
-      segmentObj[key] = component;
+      parentObj[key] = subComponent;
+    }
+  };
+
+  const handleComponent = (component, parentObj, key) => {
+    if (component.includes(encChars[0])) {
+      const subComponents = component.split(encChars[0]);
+      parentObj[key] = {};
+      subComponents.forEach((subComponent, subIndex) => {
+        handleSubComponent(subComponent, parentObj[key], `${key}.${subIndex + 1}`);
+      });
+    } else {
+      handleSubComponent(component, parentObj, key);
     }
   };
 
@@ -1051,9 +1069,9 @@ const parseOtherSegment = (segment, separator, encChars) => {
     const key = `${components[0]}.${index}`;
 
     if (component.includes(encChars[1])) {
-      segmentObj[key] = processRepeatableField(handleComponent(component, key), encChars);
+      processRepeatableField(handleComponent(component, segmentObj, key), encChars);
     } else {
-      handleComponent(component, key);
+      handleComponent(component, segmentObj, key);
     }
   }
 
