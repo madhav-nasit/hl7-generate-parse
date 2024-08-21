@@ -1,6 +1,7 @@
 const { parseHL7Message, hl7MessageGenerator } = require('../index');
 
-const hl7DFTMessage = `MSH|^~\\&|Healthmatics|Healthmatics EHR|Ntierprise|Ntierprise Clinic|20190416084748||DFT^P03|1477-3|P|2.3|||NE|NE
+try {
+  const hl7DFTMessage = `MSH|^~\\&|Healthmatics|Healthmatics EHR|Ntierprise|Ntierprise Clinic|20190416084748||DFT^P03|1477-3|P|2.3|||NE|NE
 EVN|P03|20190416084748||01
 PID|1|A4EMR640|640|67359|Test^Patient1^D||19700101|F||3|1212 Dillard Drive^^Cary^NC^27511|||(222)222-2222^^^^^222^2222222||S
 PV1|1|R|MainOffi||||Manning^Manning^Terry^^^^^^&7654321&UPIN|||||||||||||||||||||||||||||||||||||20190416110000||||||1203
@@ -12,14 +13,13 @@ DG1|3|I|J03.90^INFLUENZA WITH OTHER RESPIRATORY MANIFESTATIONS^I10|||F
 DG1|4|I|J40^BRONCHITIS, NOT SPECIFIED AS ACUTE OR CHRONIC^I10|||F
 DG1|5|I|490^BRONCHITIS, NOT SPECIFIED AS ACUTE OR CHRONIC^I9|||F`;
 
-const parsedMessage = parseHL7Message(hl7DFTMessage);
-console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
+  const parsedMessage = parseHL7Message(hl7DFTMessage);
+  console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
 
-console.log('\n');
+  console.log('\n');
 
-const hl7Generator = new hl7MessageGenerator();
+  const hl7Generator = new hl7MessageGenerator();
 
-try {
   // Option 1: Generate HL7 message with addSegment
   console.log('Option 1: Generate HL7 message with addSegment');
   hl7Generator.addSegment('MSH', parsedMessage['MSH']);

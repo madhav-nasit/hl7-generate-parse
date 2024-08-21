@@ -1,6 +1,7 @@
 const { parseHL7Message, hl7MessageGenerator } = require('../index');
 
-const hl7ORCMessage = `MSH|^~\\&|PS360|SCL|PACS|PVMC|20190418225003||ORU^R01|12345|P|2.3
+try {
+  const hl7ORCMessage = `MSH|^~\\&|PS360|SCL|PACS|PVMC|20190418225003||ORU^R01|12345|P|2.3
 PID|||54658945213||Last^First||20190425|M|||^^^^^U SA|||||||20190425|000000001
 PV1|1|E|PVED^ED02^ED02^EPVB^R||||1851634828^Last^F irst^E|1851634828^Last^First^E||1|||||||||37014421 4|||||||||||||||||||||||||20190418220755
 ORC|CN
@@ -13,14 +14,13 @@ OBX|3|TX|CT HEAD WO CONTRAST\T\BODY^CT HEAD WO CONTRAST||DATE: 4/18/2019 10:17 P
 OBX|4|TX|CT HEAD WO CONTRAST\T\BODY^CT HEAD WO CONTRAST|| ||||||F|||20190418224856
 OBX|5|TX|CT HEAD WO CONTRAST\T\BODY^CT HEAD WO CONTRAST||INDICATION: Trauma, motorcycle accident, multiple lacerations, head and neck pain||||||F|||20190418224856`;
 
-const parsedMessage = parseHL7Message(hl7ORCMessage);
-console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
+  const parsedMessage = parseHL7Message(hl7ORCMessage);
+  console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
 
-console.log('\n');
+  console.log('\n');
 
-const hl7Generator = new hl7MessageGenerator();
+  const hl7Generator = new hl7MessageGenerator();
 
-try {
   // Option 1: Generate HL7 message with addSegment
   console.log('Option 1: Generate HL7 message with addSegment');
   hl7Generator.addSegment('MSH', parsedMessage['MSH']);

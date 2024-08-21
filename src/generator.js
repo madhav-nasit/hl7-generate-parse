@@ -23,6 +23,9 @@ class hl7MessageGenerator {
    * @param {object} content - The segment content.
    */
   addSegment(segment, content) {
+    if (!!!content) {
+      throw new Error(`For ${segment} content is empty.`);
+    }
     if (!this.data[segment]) {
       this.data[segment] = [];
     }
@@ -74,9 +77,7 @@ class hl7MessageGenerator {
     }
 
     // Load the schema if it has not been loaded yet
-    if (!this.schema) {
-      this.loadSchema();
-    }
+    this.loadSchema();
 
     const hl7Message = [];
 

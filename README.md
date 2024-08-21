@@ -134,4 +134,4 @@ try {
 
 ### More Examples
 
-For additional usage examples, refer to the [example.js](./example.js) file in this repository.
+For additional usage examples, refer to the [example](./example) file in this repository.

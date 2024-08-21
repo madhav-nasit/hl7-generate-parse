@@ -1,6 +1,7 @@
 const { parseHL7Message, hl7MessageGenerator } = require('../index');
 
-const hl7ORUMessage = `MSH|^~\\&|HL7|CG3_SICU|CE_CENTRAL|GH_CSF|20251014154001||ORU^R01|20251014154001-425|P|2.3||||||UNICODE UTF-8
+try {
+  const hl7ORUMessage = `MSH|^~\\&|HL7|CG3_SICU|CE_CENTRAL|GH_CSF|20251014154001||ORU^R01|20251014154001-425|P|2.3||||||UNICODE UTF-8
 PID|||10002^^^A^MR||RAPID^^|^^|||||^^^^^^^||||||||||||||||||
 PV1||E|G52008|||||||||||||||||||||||||||||||||||||||||
 OBR|1||||||20251014154001||||||||||||||||||||^^^^|||||||||
@@ -13,14 +14,13 @@ OBX|6|ST|CO2RR||14|breaths/min|||||R
 OBX|7|ST|SPO2R||71|/min|||||R
 OBX|8|ST|SPO2P||100|%|||||R`;
 
-const parsedMessage = parseHL7Message(hl7ORUMessage);
-console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
+  const parsedMessage = parseHL7Message(hl7ORUMessage);
+  console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
 
-console.log('\n');
+  console.log('\n');
 
-const hl7Generator = new hl7MessageGenerator();
+  const hl7Generator = new hl7MessageGenerator();
 
-try {
   // Option 1: Generate HL7 message with addSegment
   console.log('Option 1: Generate HL7 message with addSegment');
   hl7Generator.addSegment('MSH', parsedMessage['MSH']);

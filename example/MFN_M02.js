@@ -1,19 +1,19 @@
 const { parseHL7Message, hl7MessageGenerator } = require('../index');
 
-const hl7MFNMessage = `MSH|^~\\&|Ntierprise|Ntierprise Clinic|Healthmatics EHR|Healthmatics Clinic|20190423114643||MFN^M02|8915-51|P|2.3|||NE|NE
+try {
+  const hl7MFNMessage = `MSH|^~\\&|Ntierprise|Ntierprise Clinic|Healthmatics EHR|Healthmatics Clinic|20190423114643||MFN^M02|8915-51|P|2.3|||NE|NE
 MFI|REF||UPD|||NE
 MFE|MAD|||testy
 STF|testy|testy|Aaron^RefTest^R|R|M|19871011|A|||(333)222-1111^^PH^RefTest@Allscripts.com^^333^2221111|Address1^^Raleigh^NC^27609
 PRA|testy|||||984567UPIN^UPIN`;
 
-const parsedMessage = parseHL7Message(hl7MFNMessage);
-console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
+  const parsedMessage = parseHL7Message(hl7MFNMessage);
+  console.log(`Parsed Message: \n${JSON.stringify(parsedMessage, null, 2)}`);
 
-console.log('\n');
+  console.log('\n');
 
-const hl7Generator = new hl7MessageGenerator();
+  const hl7Generator = new hl7MessageGenerator();
 
-try {
   // Option 1: Generate HL7 message with addSegment
   console.log('Option 1: Generate HL7 message with addSegment');
   hl7Generator.addSegment('MSH', parsedMessage['MSH']);
